@@ -55,6 +55,6 @@ jobs:
           tags: 16
           labels: cnpg-vectors
           build-args: |
-            CNPG_TAG= {{env.CNPG_TAG}}
-            PGVECTORS_TAG={{env.PGVECTORS_TAG}}
-            TARGETARCH={{amd64}}
+            CNPG_TAG= ${{env.CNPG_TAG}}
+            PGVECTORS_TAG=${{env.PGVECTORS_TAG}}
+            TARGETARCH=${{TARGETARCH}}
