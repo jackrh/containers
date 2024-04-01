@@ -53,7 +53,7 @@ jobs:
           context: "{{defaultContext}}:cnpg-vectors"
           push: true
           tags: ${{ env.CNPG_TAG }}
-          labels: cnpg-vectors
+          labels: jackrh/cnpg-vectors
           build-args: |
             CNPG_TAG=${{ env.CNPG_TAG }}
             PGVECTORS_TAG=${{ env.PGVECTORS_TAG }}
