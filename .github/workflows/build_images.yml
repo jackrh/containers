@@ -57,4 +57,4 @@ jobs:
           build-args: |
             CNPG_TAG= ${{env.CNPG_TAG}}
             PGVECTORS_TAG=${{env.PGVECTORS_TAG}}
-            TARGETARCH=${{TARGETARCH}}
+            TARGETARCH=${{env.TARGETARCH}}
