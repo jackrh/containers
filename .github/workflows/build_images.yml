@@ -52,7 +52,7 @@ jobs:
         with:
           context: "{{defaultContext}}:cnpg-vectors"
           push: true
-          tags: jackrh/cnpg-vectors:${{ env.CNPG_TAG }}
+          tags: ghcr.io/jackrh/cnpg-vectors:${{ env.CNPG_TAG }}
           #labels: jackrh/cnpg-vectors
           build-args: |
             CNPG_TAG=${{ env.CNPG_TAG }}
