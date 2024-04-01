@@ -11,17 +11,17 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-env:
-  REGISTRY: ghcr.io
-  CNPG_TAG: 16
-  PGVECTORS_TAG: 0.2.0
-  TARGETARCH: amd64
-  IMAGE_NAME: ${{ github.repository }}
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
+    env:
+      REGISTRY: ghcr.io
+      CNPG_TAG: 16
+      PGVECTORS_TAG: 0.2.0
+      TARGETARCH: amd64
+      IMAGE_NAME: ${{ github.repository }}
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -55,6 +55,6 @@ jobs:
           tags: ${{ env.CNPG_TAG }}
           labels: cnpg-vectors
           build-args: |
-            CNPG_TAG=${{env.CNPG_TAG}}
-            PGVECTORS_TAG=${{env.PGVECTORS_TAG}}
-            TARGETARCH=${{env.TARGETARCH}}
+            CNPG_TAG=${{ env.CNPG_TAG }}
+            PGVECTORS_TAG=${{ env.PGVECTORS_TAG }}
+            TARGETARCH=${{ env.TARGETARCH }}
