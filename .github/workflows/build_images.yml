@@ -13,6 +13,9 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  CNPG_TAG: 16
+  PGVECTORS_TAG: 0.2.0
+  TARGETARCH: amd64
   IMAGE_NAME: ${{ github.repository }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -49,9 +52,9 @@ jobs:
         with:
           context: "{{defaultContext}}:cnpg-vectors"
           push: true
-          tags: "{{CNPG_TAG}}"
+          tags: 16
           labels: cnpg-vectors
           build-args: |
-            CNPG_TAG=16
-            PGVECTORS_TAG=0.2.0
-            TARGETARCH=amd64
+            CNPG_TAG= {{env.CNPG_TAG}}
+            PGVECTORS_TAG={{env.PGVECTORS_TAG}}
+            TARGETARCH={{amd64}}
