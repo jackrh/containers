@@ -13,7 +13,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  CNPG_TAG: "16"
+  CNPG_TAG: 16
   PGVECTORS_TAG: 0.2.0
   TARGETARCH: amd64
   IMAGE_NAME: ${{ github.repository }}
@@ -55,6 +55,6 @@ jobs:
           tags: ${{ env.CNPG_TAG }}
           labels: cnpg-vectors
           build-args: |
-            CNPG_TAG= ${{env.CNPG_TAG}}
+            CNPG_TAG=${{env.CNPG_TAG}}
             PGVECTORS_TAG=${{env.PGVECTORS_TAG}}
             TARGETARCH=${{env.TARGETARCH}}

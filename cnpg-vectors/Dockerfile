@@ -1,11 +1,9 @@
 # syntax=docker/dockerfile-upstream:master
 ARG CNPG_TAG
-
-FROM ghcr.io/cloudnative-pg/postgresql:$CNPG_TAG
-
-ARG CNPG_TAG
 ARG PGVECTORS_TAG
 ARG TARGETARCH
+
+FROM ghcr.io/cloudnative-pg/postgresql:$CNPG_TAG
 
 # drop to root to install packages
 USER root
