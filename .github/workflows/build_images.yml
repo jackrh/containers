@@ -20,6 +20,7 @@ jobs:
       CNPG_TAG: 16
       PGVECTORS_TAG: 0.2.1
       TARGETARCH: amd64
+      CUSTOM_VER: 16.2.1
       IMAGE_NAME: ${{ github.repository }}
 
     # The type of runner that the job will run on
@@ -52,7 +53,7 @@ jobs:
         with:
           context: "{{defaultContext}}:cnpg-vectors"
           push: true
-          tags: ghcr.io/jackrh/cnpg-vectors:${{ env.CNPG_TAG }}
+          tags: ghcr.io/jackrh/cnpg-vectors:${{CUSTOM_VER}}
           #labels: jackrh/cnpg-vectors
           build-args: |
             CNPG_TAG=${{ env.CNPG_TAG }}
