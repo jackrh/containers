@@ -17,7 +17,7 @@ jobs:
   build:
     env:
       REGISTRY: ghcr.io
-      CNPG_TAG: 16
+      CNPG_TAG: 16.2
       PGVECTORS_TAG: 0.2.1
       TARGETARCH: amd64
       IMAGE_NAME: ${{ github.repository }}
